@@ -1,0 +1,306 @@
+/* ==========================
+   PROPERTY SEARCH PREMIUM
+========================== */
+
+
+.property-search-section{
+
+    position:relative;
+
+    margin-top:-90px;
+
+    z-index:20;
+
+    padding-bottom:110px;
+
+}
+
+
+
+.property-search-box{
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:40px 45px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.18);
+
+    border:1px solid rgba(255,255,255,.5);
+
+}
+
+
+
+.property-search-box form{
+
+    display:grid;
+
+    grid-template-columns:
+    1.3fr 1fr 1fr 1fr 1fr auto;
+
+    gap:22px;
+
+    align-items:end;
+
+}
+
+
+
+.search-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+.search-item label{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#555;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.5px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+
+.search-item label i{
+
+    color:#C6A15B;
+
+}
+
+
+
+.search-item input,
+.search-item select{
+
+    height:58px;
+
+    width:100%;
+
+    border:1px solid #e8e8e8;
+
+    background:#fafafa;
+
+    border-radius:16px;
+
+    padding:0 20px;
+
+    font-size:15px;
+
+    color:#222;
+
+    outline:none;
+
+    transition:.35s;
+
+}
+
+
+
+.search-item input:hover,
+.search-item select:hover{
+
+    border-color:#C6A15B;
+
+}
+
+
+
+.search-item input:focus,
+.search-item select:focus{
+
+    background:white;
+
+    border-color:#C6A15B;
+
+    box-shadow:
+    0 0 0 4px rgba(198,161,91,.12);
+
+}
+
+
+
+.search-btn{
+
+    height:58px;
+
+    padding:0 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#111;
+
+    color:white;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+
+.search-btn:hover{
+
+    background:#C6A15B;
+
+    color:#111;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 35px rgba(198,161,91,.35);
+
+}
+
+
+
+/* ==========================
+   PROPERTY FILTER PAGE
+========================== */
+
+
+.property-filter{
+
+    background:white;
+
+    padding:35px;
+
+    margin-bottom:50px;
+
+    border-radius:28px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+}
+
+
+
+.property-filter form{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.property-filter select,
+.property-filter input{
+
+    height:52px;
+
+    border:1px solid #ddd;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+}
+
+
+
+.property-filter button{
+
+    background:#111;
+
+    color:white;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+
+.property-filter button:hover{
+
+    background:#C6A15B;
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+
+@media(max-width:1200px){
+
+    .property-search-box form{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .property-search-box{
+
+        padding:25px;
+
+    }
+
+
+    .property-search-box form{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

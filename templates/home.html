@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block body_class %}
+home
+{% endblock %}
+
+
+{% block title %}
+PrimeNest | Luxury Real Estate
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Hero -->
+    {% include 'includes/hero.html' %}
+
+    <!-- Search -->
+    {% include 'includes/search.html' %}
+
+    <!-- Statistics -->
+    {% include 'includes/statistics.html' %}
+
+    <!-- Why Choose Us -->
+    {% include 'includes/why_choose.html' %}
+
+    <!-- Featured Collection -->
+    {% include 'includes/featured_collection.html' %}
+
+    <!-- Latest Properties -->
+    {% include 'includes/latest_properties.html' %}
+
+    {% include 'includes/testimonials.html' %}
+
+    <!-- Call To Action -->
+    {% include 'includes/cta.html' %}
+
+{% endblock %}

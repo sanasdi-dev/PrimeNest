@@ -1,0 +1,378 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block body_class %}
+inner-page
+{% endblock %}
+
+{% block title %}
+{{ property.title }} | PrimeNest
+{% endblock %}
+
+
+
+{% block content %}
+
+<section class="property-detail">
+
+<div class="container">
+
+
+    <!-- Main Image -->
+
+    <div class="detail-image">
+
+        {% if property.cover_image %}
+
+        <img 
+        src="{{ property.cover_image.url }}" 
+        alt="{{ property.title }}">
+
+        {% endif %}
+
+    </div>
+
+
+
+    <!-- Content -->
+
+    <div class="detail-layout">
+
+
+
+        <div class="detail-content">
+
+
+            <h1>
+                {{ property.title }}
+            </h1>
+
+
+            <div class="detail-price">
+                ${{ property.price|intcomma }}
+            </div>
+
+
+
+            <p class="location">
+                📍 {{ property.city }} - {{ property.address }}
+            </p>
+
+
+
+
+            <div class="features">
+
+
+                <div>
+                    🏠
+                    {{ property.property_type }}
+                </div>
+
+
+                <div>
+                    🛏
+                    {{ property.bedrooms }} Bedrooms
+                </div>
+
+
+                <div>
+                    🛁
+                    {{ property.bathrooms }} Bathrooms
+                </div>
+
+
+                <div>
+                    📐
+                    {{ property.area }} m²
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="description">
+
+                <h2>Description</h2>
+
+                <p>
+                    {{ property.description }}
+                </p>
+
+            </div>
+
+
+
+
+
+
+            {% if property.amenities.all %}
+
+            <div class="amenities">
+
+
+                <h2>Amenities</h2>
+
+
+                <div class="amenity-list">
+
+                {% for item in property.amenities.all %}
+
+                    <span>
+                        ✓ {{ item.name }}
+                    </span>
+
+                {% endfor %}
+
+                </div>
+
+
+            </div>
+
+            {% endif %}
+
+
+
+        </div>
+
+
+
+
+
+
+        <!-- Agent -->
+
+        <aside class="agent-box">
+
+
+            <h2>
+                Agent
+            </h2>
+
+
+
+            {% if property.agent.photo %}
+
+            <img 
+            class="agent-photo"
+            src="{{ property.agent.photo.url }}"
+            alt="{{ property.agent.name }}">
+
+
+            {% endif %}
+
+
+
+
+            <h3>
+                {{ property.agent.name }}
+            </h3>
+
+
+
+            <p>
+                📞 {{ property.agent.phone }}
+            </p>
+
+
+
+            <p>
+                ✉ {{ property.agent.email }}
+            </p>
+
+
+
+            <p>
+                {{ property.agent.bio }}
+            </p>
+
+
+        </aside>
+        <div class="visit-form">
+
+    <h2>
+        Schedule a Visit
+    </h2>
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+
+        <input 
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required>
+
+
+        <input 
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required>
+
+
+        <input 
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        required>
+
+
+        <textarea
+        name="message"
+        placeholder="Message"></textarea>
+
+
+        <button type="submit">
+            Send Request
+        </button>
+
+
+    </form>
+
+</div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <!-- Gallery -->
+
+    {% if property.gallery.exists %}
+
+
+    <div class="gallery">
+
+
+        <h2>
+            Gallery
+        </h2>
+
+
+        <div class="gallery-grid">
+
+
+        {% for image in property.gallery.all %}
+
+
+            <img 
+            src="{{ image.image.url }}"
+            alt="{{ property.title }}">
+
+
+        {% endfor %}
+
+
+        </div>
+
+
+    </div>
+
+
+    {% endif %}
+
+
+
+
+</div>
+
+</section>
+<section class="similar-properties">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Similar Properties
+            </h2>
+
+            <p>
+                More properties like this one
+            </p>
+
+        </div>
+
+
+        <div class="property-grid">
+
+
+        {% for item in similar_properties %}
+
+
+            <div class="property-card">
+
+
+                <div class="property-image">
+
+                    <img src="{{ item.cover_image.url }}"
+                         alt="{{ item.title }}">
+
+
+                    <div class="property-badge">
+
+                        {% if item.status == "sale" %}
+                            For Sale
+                        {% else %}
+                            For Rent
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="property-price">
+
+                        ${{ item.price }}
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="property-info">
+
+
+                    <h3>
+                        {{ item.title }}
+                    </h3>
+
+
+                    <div class="location">
+
+                        📍 {{ item.city }}
+
+                    </div>
+
+
+                    <a href="{% url 'property:add_favorite' property.id %}" class="favorite-btn">
+    <i class="fa-solid fa-heart"></i>
+</a>
+
+                </div>
+
+
+            </div>
+
+
+        {% endfor %}
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body_class %}
+inner-page
+{% endblock %}
+
+{% block title %}
+Favorites
+{% endblock %}
+
+{% block content %}
+
+<section class="property-list-page">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+My Favorites
+</h2>
+
+<p>
+Your saved luxury properties
+</p>
+
+</div>
+
+<div class="property-grid">
+
+{% for property in properties %}
+
+<div class="property-card">
+
+{% if property.cover_image %}
+<img src="{{ property.cover_image.url }}">
+{% endif %}
+
+<h3>{{ property.title }}</h3>
+
+<p>${{ property.price }}</p>
+
+<a href="{% url 'property:detail' property.slug %}">
+View Details
+</a>
+
+</div>
+
+{% empty %}
+
+<h3>No favorite properties yet.</h3>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

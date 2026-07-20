@@ -1,0 +1,100 @@
+<section class="property-search-section">
+
+    <div class="container">
+
+        <div class="property-search-box">
+
+            <form method="GET">
+
+                <div class="search-item">
+
+                    <label>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        name="city"
+                        placeholder="Enter city">
+
+                </div>
+
+                <div class="search-item">
+
+                    <label>
+                        <i class="fa-solid fa-building"></i>
+                        Property Type
+                    </label>
+
+                    <select name="property_type">
+
+                        <option value="">All Types</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villa">Villa</option>
+                        <option value="House">House</option>
+
+                    </select>
+
+                </div>
+
+                <div class="search-item">
+
+                    <label>
+                        <i class="fa-solid fa-tag"></i>
+                        Status
+                    </label>
+
+                    <select name="status">
+
+                        <option value="">Sale / Rent</option>
+                        <option value="sale">For Sale</option>
+                        <option value="rent">For Rent</option>
+
+                    </select>
+
+                </div>
+
+                <div class="search-item">
+
+                    <label>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        Min Price
+                    </label>
+
+                    <input
+                        type="number"
+                        name="min_price"
+                        placeholder="$100,000">
+
+                </div>
+
+                <div class="search-item">
+
+                    <label>
+                        <i class="fa-solid fa-wallet"></i>
+                        Max Price
+                    </label>
+
+                    <input
+                        type="number"
+                        name="max_price"
+                        placeholder="$5,000,000">
+
+                </div>
+
+                <button type="submit" class="search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Search
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>

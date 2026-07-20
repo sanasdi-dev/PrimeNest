@@ -1,0 +1,136 @@
+<section class="featured reveal"> id="properties">
+
+    <div class="container">
+
+<div class="section-title">
+
+    <span class="section-subtitle">
+        PRIME COLLECTION
+    </span>
+
+    <h2>
+        Featured Properties
+    </h2>
+
+    <p>
+        Discover a curated collection of luxury homes designed for modern living.
+    </p>
+
+</div>
+        <div class="property-grid">
+
+            {% for property in properties %}
+
+            <div class="property-card">
+
+                <div class="property-image">
+
+                    {% if property.cover_image %}
+                        <img src="{{ property.cover_image.url }}" alt="{{ property.title }}">
+                    {% endif %}
+
+                    <div class="property-overlay"></div>
+
+                    <div class="property-top">
+
+                        <div class="property-badge">
+
+                            <i class="fa-solid fa-circle"></i>
+
+                            {% if property.status == "sale" %}
+                                FOR SALE
+                            {% else %}
+                                FOR RENT
+                            {% endif %}
+
+                        </div>
+
+                        <a href="#" class="favorite-btn">
+
+                            <i class="fa-solid fa-heart"></i>
+
+                        </a>
+
+                    </div>
+
+                    <div class="property-price">
+
+                        ${{ property.formatted_price }}
+
+                    </div>
+
+                </div>
+
+                <div class="property-info">
+
+                    <span class="property-type">
+
+                        {{ property.property_type }}
+
+                    </span>
+
+                    <h3>
+
+                        {{ property.title }}
+
+                    </h3>
+
+                    <div class="location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        {{ property.city }}
+
+                    </div>
+
+                    <div class="property-details">
+
+                        <div>
+
+                            <i class="fa-solid fa-bed"></i>
+
+                            <span>{{ property.bedrooms }} Beds</span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fa-solid fa-bath"></i>
+
+                            <span>{{ property.bathrooms }} Baths</span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fa-solid fa-ruler-combined"></i>
+
+                            <span>{{ property.area }} m²</span>
+
+                        </div>
+
+                    </div>
+
+                    <a href="{% url 'property:detail' property.slug %}" class="details-btn">
+
+                        View Property
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+                <p>No properties available.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>

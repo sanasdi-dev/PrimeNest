@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+
+{% block body_class %}
+inner-page
+{% endblock %}
+
+
+{% block title %}
+Our Agents | PrimeNest
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="agents-page">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+Our Agents
+</h2>
+
+<p>
+Meet our professional real estate consultants
+</p>
+
+</div>
+
+
+
+<div class="agents-grid">
+
+
+{% for agent in agents %}
+
+
+<div class="agent-card">
+
+
+<div class="agent-icon">
+<i class="fa-solid fa-user-tie"></i>
+</div>
+
+
+
+<h3>
+{{ agent.name }}
+</h3>
+
+
+
+<p>
+📞 {{ agent.phone }}
+</p>
+
+
+<p>
+✉ {{ agent.email }}
+</p>
+
+
+<p>
+{{ agent.bio }}
+</p>
+
+
+</div>
+
+
+{% empty %}
+
+
+<p>
+No agents available.
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+{% endblock %}

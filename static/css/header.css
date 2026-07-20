@@ -1,0 +1,414 @@
+/* ==========================
+   HEADER
+========================== */
+
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    transition:.35s ease;
+
+}
+
+
+/* ==========================
+   HOME HEADER
+========================== */
+
+
+body.home .header{
+
+    background:transparent;
+
+}
+
+
+body.home .logo-title{
+
+    color:#fff;
+
+}
+
+
+body.home .logo-subtitle{
+
+    color:#ddd;
+
+}
+
+
+body.home .nav-menu a{
+
+    color:#fff;
+
+}
+
+
+body.home .login-btn{
+
+    color:#fff;
+
+}
+
+
+
+
+
+/* ==========================
+   INNER PAGES HEADER
+========================== */
+
+
+body.inner-page .header{
+
+    background:#fff;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+
+}
+
+
+body.inner-page .logo-title{
+
+    color:#111;
+
+}
+
+
+body.inner-page .logo-subtitle{
+
+    color:#777;
+
+}
+
+
+body.inner-page .nav-menu a{
+
+    color:#111;
+
+}
+
+
+body.inner-page .login-btn{
+
+    color:#111;
+
+}
+
+
+
+
+
+/* ==========================
+   HEADER CONTAINER
+========================== */
+
+
+.header-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:25px 0;
+
+}
+
+
+
+/* ==========================
+   LOGO
+========================== */
+
+
+.logo{
+
+    text-decoration:none;
+
+}
+
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.logo-title{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+
+.logo-subtitle{
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+
+
+/* ==========================
+   MENU
+========================== */
+
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+
+.nav-menu a{
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:currentColor;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-menu a:hover::after,
+.nav-menu .active::after{
+
+    width:100%;
+
+}
+
+
+
+
+
+/* ==========================
+   ACTION BUTTONS
+========================== */
+
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.login-btn{
+
+    text-decoration:none;
+
+    font-size:15px;
+
+}
+
+
+
+.primary-btn{
+
+    background:#111;
+
+    color:#fff !important;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+}
+
+
+
+
+
+/* ==========================
+   SCROLL HOME
+========================== */
+
+
+body.home .header.active{
+
+    background:#fff;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+body.home .header.active .logo-title,
+body.home .header.active .nav-menu a,
+body.home .header.active .login-btn{
+
+    color:#111;
+
+}
+
+
+body.home .header.active .logo-subtitle{
+
+    color:#777;
+
+}
+
+
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+
+.menu-toggle{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+
+.menu-toggle span{
+
+    width:28px;
+
+    height:3px;
+
+    background:currentColor;
+
+    border-radius:5px;
+
+}
+
+
+
+@media(max-width:992px){
+
+
+.nav-menu,
+.nav-actions{
+
+    display:none;
+
+}
+
+
+
+.menu-toggle{
+
+    display:flex;
+
+}
+
+
+}
+@media(max-width:992px){
+
+    .header-container{
+
+        padding:20px;
+
+    }
+
+
+    body.home .menu-toggle span{
+
+        background:#fff;
+
+    }
+
+
+    body.home .header.active .menu-toggle span{
+
+        background:#111;
+
+    }
+
+
+    body.inner-page .menu-toggle span{
+
+        background:#111;
+
+    }
+
+
+    .logo-title{
+
+        font-size:26px;
+
+    }
+
+
+    .logo-subtitle{
+
+        font-size:9px;
+
+        letter-spacing:3px;
+
+    }
+
+}

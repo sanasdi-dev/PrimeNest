@@ -1,0 +1,94 @@
+<header class="header" id="header">
+
+    <div class="container header-container">
+
+
+        <!-- Logo -->
+
+        <a href="{% url 'home' %}" class="logo">
+
+            <div class="logo-text">
+
+                <span class="logo-title">
+                    PrimeNest
+                </span>
+
+                <span class="logo-subtitle">
+                    Luxury Real Estate
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- Navigation -->
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="{% url 'home' %}" class="active">
+                Home
+            </a>
+
+            <a href="{% url 'property:list' %}">
+                Properties
+            </a>
+
+            <a href="{% url 'agents' %}">
+                Agents
+            </a>
+
+            <a href="{% url 'about' %}">
+                About
+            </a>
+
+            <a href="{% url 'contact' %}">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+
+        <!-- Right Side -->
+
+        <div class="nav-actions">
+
+            <!-- Favorites -->
+
+            <a href="{% url 'property:favorites' %}" class="favorite-header">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </a>
+
+
+            <a href="{% url 'contact' %}" class="login-btn">
+                Contact
+            </a>
+
+
+            <a href="{% url 'property:list' %}" class="primary-btn">
+                View Properties
+            </a>
+
+        </div>
+
+
+
+
+        <!-- Mobile Menu -->
+
+        <div class="menu-toggle" id="menuToggle">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</header>

@@ -1,0 +1,129 @@
+<section class="latest-properties reveal">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                Latest Properties
+            </h2>
+
+            <p>
+                Explore our newest luxury real estate listings
+            </p>
+
+        </div>
+
+
+
+        <div class="swiper propertySwiper">
+
+            <div class="swiper-wrapper">
+
+
+                {% for property in properties %}
+
+                <div class="swiper-slide">
+
+
+                    <div class="property-card">
+
+
+                        <div class="property-image">
+
+
+                            {% if property.cover_image %}
+
+                            <img src="{{ property.cover_image.url }}" 
+                            alt="{{ property.title }}">
+
+                            {% endif %}
+
+
+                            <div class="property-badge">
+
+                                {% if property.status == 'sale' %}
+                                    For Sale
+                                {% else %}
+                                    For Rent
+                                {% endif %}
+
+                            </div>
+
+
+                            <div class="property-price">
+
+                                ${{ property.price }}
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="property-info">
+
+
+                            <h3>
+                                {{ property.title }}
+                            </h3>
+
+
+                            <div class="location">
+                                📍 {{ property.city }}
+                            </div>
+
+
+                            <div class="property-details">
+
+                                <span>
+                                    🛏 {{ property.bedrooms }}
+                                </span>
+
+                                <span>
+                                    🛁 {{ property.bathrooms }}
+                                </span>
+
+                                <span>
+                                    📐 {{ property.area }}m²
+                                </span>
+
+
+                            </div>
+
+
+                            <a href="{% url 'property:detail' property.slug %}" 
+                            class="details-btn">
+
+                                View Details
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+            <div class="swiper-pagination"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>

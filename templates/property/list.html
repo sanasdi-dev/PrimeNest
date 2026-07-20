@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block body_class %}
+inner-page
+{% endblock %}
+
+
+
+{% block title %}
+Properties | PrimeNest
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+<section class="property-list-page">
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                All Properties
+            </h2>
+
+            <p>
+                Explore our exclusive luxury properties
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="property-filter">
+
+
+            <form method="GET">
+
+
+                <select name="property_type">
+
+                    <option value="">
+                        Property Type
+                    </option>
+
+
+                    <option value="Villa">
+                        Villa
+                    </option>
+
+
+                    <option value="Apartment">
+                        Apartment
+                    </option>
+
+
+                    <option value="House">
+                        House
+                    </option>
+
+
+                </select>
+
+
+
+
+                <select name="status">
+
+                    <option value="">
+                        Status
+                    </option>
+
+
+                    <option value="sale">
+                        For Sale
+                    </option>
+
+
+                    <option value="rent">
+                        For Rent
+                    </option>
+
+
+                </select>
+
+
+
+
+                <input 
+                type="number"
+                name="min_price"
+                placeholder="Min Price">
+
+
+
+                <input 
+                type="number"
+                name="max_price"
+                placeholder="Max Price">
+
+
+
+                <button type="submit">
+                    Search
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="property-grid">
+
+
+            {% for property in properties %}
+
+
+            <div class="property-card">
+
+
+
+                <div class="property-image">
+
+
+                    {% if property.cover_image %}
+
+                    <img src="{{ property.cover_image.url }}"
+                         alt="{{ property.title }}">
+
+                    {% endif %}
+
+
+
+                    <div class="property-overlay"></div>
+
+
+
+                    <div class="property-badge">
+
+                        {% if property.status == "sale" %}
+                            For Sale
+                        {% else %}
+                            For Rent
+                        {% endif %}
+
+                    </div>
+
+
+
+
+                    <div class="property-price">
+
+                       ${{ property.formatted_price }}
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="property-info">
+
+
+                    <h3>
+                        {{ property.title }}
+                    </h3>
+
+
+
+
+                    <div class="location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        {{ property.city }}
+
+                    </div>
+
+
+
+
+
+                    <div class="property-details">
+
+
+                        <div>
+                            <i class="fa-solid fa-bed"></i>
+                            {{ property.bedrooms }}
+                        </div>
+
+
+
+                        <div>
+                            <i class="fa-solid fa-bath"></i>
+                            {{ property.bathrooms }}
+                        </div>
+
+
+
+
+                        <div>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            {{ property.area }} m²
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <a href="{% url 'property:detail' property.slug %}"
+                       class="details-btn">
+
+                        View Details
+
+                    </a>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            {% empty %}
+
+
+            <p>
+                No properties available.
+            </p>
+
+
+            {% endfor %}
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+{% endblock %}
