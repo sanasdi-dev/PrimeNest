@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-cuu87a4n_dj+n4$0pu0c#)$d0r+p_=7*wh-z^k9q_4b92eh)9i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "primenest-2.onrender.com",
+]
 
 
 # Application definition
