@@ -1,3 +1,4 @@
+
 """
 Django settings for primenest project.
 
@@ -20,10 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cuu87a4n_dj+n4$0pu0c#)$d0r+p_=7*wh-z^k9q_4b92eh)9i'
+import os
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
