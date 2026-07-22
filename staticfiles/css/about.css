@@ -1,0 +1,220 @@
+/* ==========================
+   ABOUT PAGE
+========================== */
+
+
+.about-hero{
+
+    min-height:600px;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+
+    url("/static/images/about/hero.jpeg")
+
+    center/cover no-repeat;
+
+    color:white;
+
+}
+
+
+
+.about-content{
+
+    max-width:800px;
+
+}
+
+
+
+.about-content span{
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+    color:#ddd;
+
+}
+
+
+
+.about-content h1{
+
+    font-size:60px;
+
+    line-height:1.2;
+
+    margin:25px 0;
+
+}
+
+
+
+.about-content p{
+
+    font-size:19px;
+
+    color:#eee;
+
+    line-height:1.8;
+
+}
+
+
+
+
+/* STORY */
+
+
+.about-story{
+
+    padding:120px 0;
+
+}
+
+
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+.about-grid h2{
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.about-grid p{
+
+    color:#666;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.about-image img{
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+}
+
+
+
+
+/* STATS */
+
+
+.about-stats{
+
+    background:#111;
+
+    padding:100px 0;
+
+}
+
+
+
+
+
+.about-stats .stat-item{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+.about-stats h2{
+
+    color:white;
+
+}
+
+
+
+.about-stats p{
+
+    color:#ccc;
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:992px){
+
+
+    .about-content h1{
+
+        font-size:45px;
+
+    }
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+
+
+
+@media(max-width:576px){
+
+
+    .about-content h1{
+
+        font-size:34px;
+
+    }
+
+
+    .about-grid h2{
+
+        font-size:32px;
+
+    }
+
+
+}

@@ -1,0 +1,231 @@
+/* ==========================
+   WHY CHOOSE
+========================== */
+
+
+.why-choose{
+
+    padding:120px 0;
+    background:#fff;
+
+}
+
+
+
+.why-wrapper{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+
+}
+
+
+
+
+.why-image{
+
+    position:relative;
+
+}
+
+
+
+.why-image img{
+
+    height:650px;
+    object-fit:cover;
+    border-radius:35px;
+
+}
+
+
+
+
+.experience-box{
+
+    position:absolute;
+
+    bottom:40px;
+    right:-30px;
+
+    background:#111;
+    color:#fff;
+
+    padding:30px 40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.experience-box h3{
+
+    font-size:55px;
+    color:#C6A15B;
+
+}
+
+
+
+.experience-box p{
+
+    margin:0;
+
+}
+
+
+
+.why-label{
+
+    letter-spacing:4px;
+    font-size:13px;
+    color:#C6A15B;
+    font-weight:600;
+
+}
+
+
+
+.why-content h2{
+
+    font-size:52px;
+    line-height:1.15;
+    margin:20px 0;
+
+}
+
+
+
+.why-description{
+
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:40px;
+
+}
+
+
+
+.why-grid{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+
+}
+
+
+
+.why-card{
+
+    padding:25px;
+
+    background:#fafafa;
+
+    border-radius:22px;
+
+    transition:.35s;
+
+}
+
+
+
+.why-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+
+}
+
+
+
+.why-icon{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#111;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.why-card h3{
+
+    font-size:19px;
+    margin-bottom:10px;
+
+}
+
+
+
+.why-card p{
+
+    color:#777;
+    font-size:14px;
+
+}
+
+
+
+@media(max-width:992px){
+
+    .why-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .why-image img{
+
+        height:500px;
+
+    }
+
+
+    .experience-box{
+
+        right:20px;
+
+    }
+
+}
+
+
+
+@media(max-width:576px){
+
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .why-content h2{
+
+        font-size:36px;
+
+    }
+
+}

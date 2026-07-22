@@ -1,0 +1,182 @@
+/* ==========================
+   STATISTICS PREMIUM
+========================== */
+
+
+.statistics{
+
+    padding:120px 0;
+
+    background:#0B0B0B;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.statistics::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150px;
+
+    left:-150px;
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(198,161,91,.08);
+
+    border-radius:50%;
+
+}
+
+
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.stat-item{
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:28px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+
+
+.stat-item:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#C6A15B;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.35);
+
+}
+
+
+
+.stat-icon{
+
+    width:65px;
+
+    height:65px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(198,161,91,.12);
+
+    color:#C6A15B;
+
+    font-size:25px;
+
+    transition:.4s;
+
+}
+
+
+
+.stat-item:hover .stat-icon{
+
+    background:#C6A15B;
+
+    color:#111;
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+.stat-item h2{
+
+    color:#fff;
+
+    font-size:60px;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.stat-item p{
+
+    color:#BDBDBD;
+
+    font-size:15px;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+@media(max-width:992px){
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:576px){
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
