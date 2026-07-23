@@ -25,10 +25,17 @@
 
                 <div class="property-image">
 
-                    {% if property.cover_image %}
-                        <img src="{{ property.cover_image.url }}" alt="{{ property.title }}">
-                    {% endif %}
-
+{% if forloop.counter == 1 %}
+    <img src="{% static 'images/properties/property1.jpeg' %}" alt="{{ property.title }}">
+{% elif forloop.counter == 2 %}
+    <img src="{% static 'images/properties/property2.jpeg' %}" alt="{{ property.title }}">
+{% elif forloop.counter == 3 %}
+    <img src="{% static 'images/properties/property3.jpeg' %}" alt="{{ property.title }}">
+{% elif forloop.counter == 4 %}
+    <img src="{% static 'images/properties/property4.jpeg' %}" alt="{{ property.title }}">
+{% else %}
+    <img src="{% static 'images/properties/property5.jpeg' %}" alt="{{ property.title }}">
+{% endif %}
                     <div class="property-overlay"></div>
 
                     <div class="property-top">
